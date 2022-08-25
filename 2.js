@@ -7,19 +7,21 @@ const mode = (a) => {
     a.forEach(each => {
         number = each;
         count[number] = (count[number] || 0) + 1;
-        // console.log({ each: each, count: count[number] });
         if (count[number] > maxIndex) {
             maxIndex = count[number];
         }
         i++;
     });
-    console.log(count);
 
-    count.forEach(each => {
-        console.log(each);
-    });
+    for (i in count) {
+        if (count.hasOwnProperty(i)) {
+            if (count[i] === maxIndex) {
+                banyak.push(Number(i));
+            }
+        }
+    }
 
-    // console.log(maxIndex);
+    console.log(banyak);
 }
 
 mode(X);
